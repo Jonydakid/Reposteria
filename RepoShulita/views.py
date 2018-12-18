@@ -9,13 +9,13 @@ import numpy
 # Create your views here.
 
 def index(request):
-	return render(request, "nosotros.html", { "titulo": "Nosotros" })
+	return render(request, "index.html", { "titulo": "Index" })
 
 def catalogo(request):
-	return render(request, "nosotros.html", { "titulo": "Nosotros" })
+	return render(request, "catalogo.html", { "titulo": "Catalogo" })
 
 def confirmacion(request):
-	return render(request, "nosotros.html", { "titulo": "Nosotros" })
+	return render(request, "confirmacion.html", { "titulo": "Confirmacion" })
 
 def contacto(request):
-	return render(request, "nosotros.html", { "titulo": "Nosotros" })
+	return render(request, "contacto.html", { "titulo": "Contacto" })
