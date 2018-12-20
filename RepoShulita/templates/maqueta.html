@@ -1,44 +1,45 @@
-{%load staticfiles%}
+{%load static %}
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <head>
+
     <!-- La página se ajusta al ancho del navegador o dispositivo -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{titulo}} | Repostería Shulita</title>
-    {{block Imports}}
-    {{blockend}}
-</head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/global.css' %}" />
+        <title>{{titulo}} | Repostería Shulita</title>
+        {%block Imports%}
+        {%endblock%}
+    </head>
 
-<body>
-    <div id="contenedor">
-        <header>
-            <div id="mainbar">
+    <body>
+        <div id="contenedor">
+            <header>
+                <div id="mainbar">
 
-                <nav>
+                    <nav>
                     <!-- Barra de navegación -->
                     <a href="{% url 'indice' %}">Inicio</a>
                     <a href="{% url 'catalogo' %}">Catalogo</a>
                     <a href="{% url 'contacto' %}">Contáctanos</a>
-                </nav>
-                <div id="logo">
-                    <a href="{% url 'indice' %}"><img src="{% static 'images/logo.png' %}" alt="Logo Reposteria Shulita" /></a>
+                    </nav>
+                    <div id="logo">
+                        <a href="{% url 'indice' %}"><img src="{% static 'images/logo.png' %}" alt="Logo Reposteria Shulita" /></a>
+                    </div>
                 </div>
-            </div>
-        </header>
-        <section>
-            {% block Content %}
-            {% endblock %}
-        </section>
+            </header>
+            <section>
+                {% block Content %}
+                {% endblock %}
+            </section>
 
-        <footer>
-            <p>Repostería Shulita</p>
-        </footer>
-    </div>
+            <footer>
+                <p>Repostería Shulita</p>
+            </footer>
+        </div>
 
-</body>
+    </body>
 
 </html>
