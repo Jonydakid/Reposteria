@@ -19,7 +19,7 @@ class Producto(models.Model):
 	precio = models.IntegerField()
 	stock = models.IntegerField()
 	foto=models.ImageField(upload_to = "media", blank = True)
-	email=models.CharField(max_length = 100)
+	descripcion=models.CharField(max_length = 100)
 
 class Boleta(models.Model):
 	idBoleta = models.AutoField(primary_key = True)
