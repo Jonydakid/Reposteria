@@ -4,7 +4,7 @@
 {% block Content %}
 				<h1>Página para añadir producto</h1>
 
-				<form id="addProducto" method="POST">
+				<form id="addProducto" method="POST" enctype="multipart/form-data">
 					{%csrf_token%}
 					<table class="tableform">
 						{% for campo in form %}

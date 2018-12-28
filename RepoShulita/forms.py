@@ -37,6 +37,6 @@ class FormProducto(forms.Form):
     stock = forms.IntegerField(label="Stock", min_value=0, widget=forms.NumberInput(
         attrs={"id": "stock", "class": "campo", "placeholder": "1"}))
     foto = forms.ImageField(
-        label="Foto",required=False, widget=forms.ClearableFileInput(attrs={"id": "foto", "enctype":"multipart/form-data"}))
+        label="Foto",required=False, widget=forms.ClearableFileInput(attrs={"name": "foto"}))
     descripcion = forms.CharField(label="Descripcion", max_length=255, widget=forms.TextInput(
         attrs={"id": "descripcion", "class": "campo"}))

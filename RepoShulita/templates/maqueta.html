@@ -2,45 +2,71 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <head>
+<head>
 
     <!-- La página se ajusta al ancho del navegador o dispositivo -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/global.css' %}" />
-        <title>{{titulo}} | Repostería Shulita</title>
-        {%block Imports%}
-        {%endblock%}
-    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all">
+    <link href="{% static 'css/business-casual.min.css'%}" rel="stylesheet" type="text/css" media="all">
+    <title>{{titulo}} | Repostería Shulita</title>
+    {%block Imports%}
+    {%endblock%}
+</head>
 
-    <body>
-        <div id="contenedor">
-            <header>
-                <div id="mainbar">
+<body>
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+        <span class="site-heading-upper text-primary mb-3">Repostería Shulita</span>
+        <span class="site-heading-lower">Cocinando lo mejor con la receta de la abuela</span>
+    </h1>
 
-                    <nav>
-                    <!-- Barra de navegación -->
-                    <a href="{% url 'indice' %}">Inicio</a>
-                    <a href="{% url 'catalogo' %}">Catalogo</a>
-                    <a href="{% url 'contacto' %}">Contáctanos</a>
-                    <a href="{% url 'addProducto' %}">Añadir producto</a>
-                    </nav>
-                    <div id="logo">
-                        <a href="{% url 'indice' %}"><img src="{% static 'images/logo.png' %}" alt="Logo Reposteria Shulita" /></a>
-                    </div>
-                </div>
-            </header>
-            <section>
-                {% block Content %}
-                {% endblock %}
-            </section>
 
-            <footer>
-                <p>Repostería Shulita</p>
-            </footer>
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+        <div class="container">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="{% url 'indice' %}">Inicio
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="{% url 'catalogo' %}">Catalogo</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="{% url 'contacto' %}">Contacto</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="{% url 'addProducto' %}">Añadir producto</a>
+                    </li>
+                </ul>
+            </div>
         </div>
+    </nav>
 
-    </body>
+
+
+
+    {% block section %}
+    {% endblock %}
+
+
+    <footer class="footer text-faded text-center py-5">
+        <div class="container">
+            <p class="m-0 small">Copyright &copy; Repostería Shulita 2018</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
 
 </html>
