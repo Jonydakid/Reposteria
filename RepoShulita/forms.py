@@ -24,9 +24,9 @@ class FormPersona(forms.Form):
 
 class FormProducto(forms.Form):
     CATEGORIAS = (
-        ("PP", "Panes de Pascua"),
-        ("EMP", "Empanadas"),
-        ("PA", "Panes Amasados")
+        ("Panes de Pascua", "Panes de Pascua"),
+        ("Empanadas", "Empanadas"),
+        ("Panes Amasados", "Panes Amasados")
     )
     nombre = forms.CharField(label="Nombre", max_length=100, widget=forms.TextInput(
         attrs={"id": "nombre", "class": "campo"}))

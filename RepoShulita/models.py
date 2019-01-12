@@ -18,7 +18,7 @@ class Producto(models.Model):
 	categoria=models.CharField(max_length=25)
 	precio = models.IntegerField()
 	stock = models.IntegerField()
-	foto=models.ImageField(upload_to = "media", blank = True)
+	foto=models.ImageField(upload_to = "media" , blank = True)
 	descripcion=models.CharField(max_length = 100)
 
 class Boleta(models.Model):

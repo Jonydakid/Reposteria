@@ -15,7 +15,8 @@ def index(request):
 
 
 def catalogo(request):
-    return render(request, "catalogo.html", {"titulo": "Catalogo"})
+    prod=Producto.objects.all()
+    return render(request, "catalogo.html", {"titulo": "Catalogo", "prods":prod})
 
 
 def confirmacion(request):
@@ -35,7 +36,7 @@ def addProducto(request):
                 stock=data.get("stock"),
                 descripcion=data.get("descripcion"),
                 foto=request.FILES["foto"])
-        return render(request, "addProducto.html", {"titulo": "Exito"})
+        return redirect("catalogo")
     else:
         form = FormProducto()
     return render(request, "addProducto.html", {"titulo": "Añadir producto", "form": form})
