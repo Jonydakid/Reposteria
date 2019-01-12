@@ -19,9 +19,13 @@
 			
 			<img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{prod.foto.url}}" alt="" >
 			<div class="product-item-description d-flex ml-auto">
-				<div class="bg-faded p-5 rounded">
+				<div class="intro-text left-0 text-center bg-faded p-5 rounded">
 					<p class="mb-0">{{prod.descripcion}}</p>
+					<div class="intro-button mx-auto">
+						<a class="btn btn-primary btn-xl" href="{% url 'addCarrito' idProd=prod.idProducto %}">Añadir al carrito</a>
+					</div>
 				</div>
+				
 			</div>
 		</div>
 	</div>

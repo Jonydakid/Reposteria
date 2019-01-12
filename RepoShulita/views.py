@@ -41,6 +41,10 @@ def addProducto(request):
         form = FormProducto()
     return render(request, "addProducto.html", {"titulo": "Añadir producto", "form": form})
 
+def addCarrito(request, idProducto):
+    producto=Producto.objects.get(idProducto=idProducto)
+    return render(request,"contacto.html", {"prods": prods})
+
 
 def contacto(request):
     return render(request, "contacto.html", {"titulo": "Contacto"})
